@@ -1,0 +1,12 @@
+﻿
+.navbar-custom {
+    background-color: #769c6b;
+    width: 100%;
+    font-family: sans-serif;
+}
+.nav-link{
+    color: whitesmoke;
+}
+.navbar-brand{
+    color: whitesmoke;
+}

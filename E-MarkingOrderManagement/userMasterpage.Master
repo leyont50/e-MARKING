@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="userMasterpage.master.cs" Inherits="E_MarkingOrderManagement.userMasterpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>User Module</title>
+     <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+     <%--bootstrap--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap/js/js/bootstrap.bundle.min.js"></script>
+    <%--datatables--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+    <%--fontawesome--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <%--customCSS--%>
+    <link href="main%20css/userstyles.css" rel="stylesheet" />
+        <script>
+            $(document).ready(function () {
+                $(".siderbar_menu li").click(function () {
+                    $(".siderbar_menu li").removeClass("active");
+                    $(this).addClass("active");
+                });
+
+                $(".hamburger").click(function () {
+                    $(".wrapper").addClass("active");
+                });
+
+                $(".close, .bg_shadow").click(function () {
+                    $(".wrapper").removeClass("active");
+                });
+            });
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+          <div class="wrapper">
+            <div class="sidebar">
+                <div class="bg_shadow"></div>
+                <div class="sidebar_inner">
+                    <div class="close">
+                        <i class="fas fa-times"></i>
+                    </div>
+
+                     <div class="profile_info">
+                        <div class="profile_img">
+                            <img src="images/sikkimforestlogo.png" />
+                        </div>
+                        <div class="profile_data">
+                            <p class="name">User Module</p>
+                        </div>
+                    </div>
+
+                    <ul class="siderbar_menu">
+                        <li>
+                            <a href="userHome.aspx">
+                                <div class="icon"><i class="fas fa-home"></i></div>
+                                <div class="title">Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="form1.aspx">
+                                <div class="icon"><i class="fas fa-memo-circle-check"></i></div>
+                                <div class="title"> Application Form</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="applicationstatus.aspx">
+                                <div class="icon"><i class="fas fa-memo-circle-check"></i></div>
+                                <div class="title"> Applications Status</div>
+                            </a>
+                        </li>
+                        </ul>
+                        
+                        
+                    <div class="logout_btn">
+                        <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="false">Logout</asp:LinkButton>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="navbar">
+                    <div class="hamburger">
+                        <img src="images/sikkimforestlogo.png" />
+                    </div>
+                    <div class="logo">
+                        <h3 style="color:#499034">Forest Department</h3>
+                    </div>
+                </div>
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder> 
+               
+            
+        </div>
+            
+    </form>
+</body>
+</html>
